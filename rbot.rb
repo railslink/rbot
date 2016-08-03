@@ -9,6 +9,7 @@ end
 
 module RBot
   VERSION = '0.0.1'
+  STARTED_AT = Time.now
 
   class Bot < SlackRubyBot::Bot
   end
