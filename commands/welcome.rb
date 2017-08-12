@@ -44,6 +44,9 @@ module RBot
           5. Wrap code in backticks. <https://slack.zendesk.com/hc/en-us/article_attachments/204977928/backticks.png|Example here>.
           6. See #1.
 
+          This team's public channels are archived at https://rubyonrails-link.slackarchive.io/
+          Please keep this in mind when posting.
+
           If you're new to Ruby and/or Rails checkout <https://github.com/railslink/resources/wiki|our wiki> for resources to get started.
 
           We're glad to have you here!
