@@ -51,6 +51,8 @@ module RBot
           5. Wrap code in backticks. <https://slack.zendesk.com/hc/en-us/article_attachments/204977928/backticks.png|Example here>.
           6. See #1.
 
+          Be sure to browse all the public channels to see any topics and conversations that might be interesting to you.
+
           This team's public channels are archived at https://rubyonrails-link.slackarchive.io/
           Please keep this in mind when posting.
 
