@@ -1,31 +1,38 @@
 module RBot
   module Commands
-    class Welcome < SlackRubyBot::Commands::Base
+    class Welcome < RBot::Commands::Base
+      help do
+        title "welcome"
+        desc "DMs the welcome text to you"
+        long_desc "If you've forgotten the welcome text that you received when you joined you can get it again."
+      end
 
+      command 'welcome'
       match(/has joined the channel/)
 
       def self.call(client, data, match)
         if data.subtype == 'channel_join'
           return unless client.channels[data.channel].try(:name) == ENV.fetch('WELCOME_CHANNEL', 'general')
+        end
 
-          user = client.users[data.user]
-          return if user.is_bot
+        user = client.users[data.user]
+        return if user.is_bot
 
-          dm_channel = begin
-                         client.web_client.im_open(user: data.user).channel.id
-                       rescue
-                         nil
-                       end
+        dm_channel = begin
+                       client.web_client.im_open(user: data.user).channel.id
+                     rescue
+                       nil
+                     end
 
-          if dm_channel
-            logger.info "Welcoming #{user.real_name} (#{user.name})"
-            client.web_client.chat_postMessage(
-              as_user: true,
-              channel: dm_channel,
-              text: self.welcome_text(client, user),
-              mrkdwn: true
-            )
-          end
+        if dm_channel
+          logger.info "Welcoming #{user.real_name} (#{user.name})"
+          client.web_client.chat_postMessage(
+            as_user: true,
+            channel: dm_channel,
+            text: self.welcome_text(client, user),
+            mrkdwn: true,
+            unfurl_links: false
+          )
         end
       end
 

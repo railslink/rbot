@@ -1,6 +1,12 @@
 module RBot
   module Commands
-    class About < SlackRubyBot::Commands::Base
+    class About < Base
+      help do
+        title "about"
+        desc "Shows details about RBot"
+        long_desc "Shows information about this Slack channel and RBot itself."
+      end
+
       command 'about'
       match(/^(?<bot>[[:alnum:][:punct:]@<>]*)$/u)
 

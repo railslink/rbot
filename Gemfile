@@ -1,7 +1,8 @@
-source 'http://rubygems.org'
+source "http://rubygems.org"
 
-ruby '2.3.0'
+ruby "2.4.2"
 
-gem 'slack-ruby-bot'
-gem 'celluloid-io'
-gem 'pry'
+gem "dotenv", "~> 2.2"
+gem "slack-ruby-bot", "~> 0.10"
+gem "celluloid-io", "~> 0.17"
+gem "pry"
