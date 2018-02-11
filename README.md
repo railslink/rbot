@@ -9,6 +9,7 @@ Add that and the following ENV vars to `.env.local`. For example:
 
     SLACK_API_TOKEN=xxxxxxxx
     DEVELOPMENT_USER=phallstrom
+    REDISCLOUD_URL=redis://127.0.0.1:6379/1
 
 Setting DEVELOPMENT_USER will restrict the bot to responding only to commands
 initiated by the user specified.
