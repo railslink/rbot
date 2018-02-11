@@ -2,15 +2,15 @@ module RBot
   module Commands
     class Monitor < RBot::Commands::Base
 
-      match(/./)
+      match(/.*/)
 
       def self.call(client, data, match)
-        if data.type == 'message'
-          user = client.users[data.user]
-          logger.info "Heard from #{user.real_name} (#{user.name}) at #{Time.now}"
-        else
-          logger.debug "DATA: #{data.inspect}"
-        end
+        user = client.users[data.user]
+        channel_name = client.channels[data.channel].try(:name)
+
+        Celluloid::Actor[:user_activity].async.track(user_name: user.name)
+
+        logger.info "Heard from #{user.real_name} (#{user.name}) at #{Time.now.utc} in ##{channel_name}"
       end
 
       private

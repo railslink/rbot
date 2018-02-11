@@ -18,12 +18,13 @@ module RBot
   end
 end
 
+require_relative 'models/user_activity'
 require_relative 'commands/base'
 require_relative 'commands/help'
 require_relative 'commands/about'
 require_relative 'commands/welcome'
+require_relative 'commands/monitor' # must be last
 
-# Must be last as it is a catchall
-require_relative 'commands/monitor'
+Celluloid::Actor[:user_activity] = UserActivity.new
 
 RBot::Bot.run

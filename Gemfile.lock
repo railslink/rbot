@@ -46,6 +46,7 @@ GEM
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    redis (4.0.1)
     slack-ruby-bot (0.10.5)
       hashie
       slack-ruby-client (>= 0.6.0)
@@ -69,9 +70,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  celluloid (~> 0.17)
   celluloid-io (~> 0.17)
   dotenv (~> 2.2)
   pry
+  redis (~> 4.0)
   slack-ruby-bot (~> 0.10)
 
 RUBY VERSION
