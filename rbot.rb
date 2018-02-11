@@ -11,7 +11,7 @@ SlackRubyBot.configure do |config|
 end
 
 module RBot
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
   STARTED_AT = Time.now
 
   class Bot < SlackRubyBot::Bot

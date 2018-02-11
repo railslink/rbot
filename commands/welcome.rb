@@ -31,7 +31,8 @@ module RBot
             channel: dm_channel,
             text: self.welcome_text(client, user),
             mrkdwn: true,
-            unfurl_links: false
+            unfurl_links: false,
+            unfurl_media: false
           )
         end
       end
